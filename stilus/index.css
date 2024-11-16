@@ -1,0 +1,31 @@
+:root{
+    --header-color: green;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+}
+
+h1{
+    font-size: 3rem;
+    color: var(--header-color);
+}
+
+.header{
+    background-color: var(--header-color);
+    padding: 20px;
+}
+
+.header a{
+    color: white;
+    font-size: small;
+    text-decoration: none;
+    padding-inline: 10px;
+}
+
