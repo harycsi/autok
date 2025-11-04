@@ -3,16 +3,16 @@ import styles from '../styles/Autok.module.css';
 
 export type AutokProps = PropsWithChildren<{
     img: string,
+    root: string
     name: string,
 }>
 
-export const Autok: FC<AutokProps> = ({ img, name }) => {
+export const Autok: FC<AutokProps> = ({ img, root, name }) => {
 
     return <div className={`${styles.container}`} >
-        <div>
-            <img src={img} />
+            <a href={root}><img src={img} alt={name} />
+            </a>
             <h2>{name}</h2>
-        </div>
     </div>
 }
 
