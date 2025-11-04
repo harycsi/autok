@@ -15,7 +15,7 @@ function App() {
         </ul>
       </nav>
       <AutokLista array={cars} />
-      <footer>Gombi Adrián és Haragos Csilla</footer>
+      <footer>Gombos Adrián és Haragos Csilla</footer>
     </>
   );
 }
