@@ -1,51 +1,86 @@
-import { FC, PropsWithChildren } from 'react';
-import styles from '../styles/Autok.module.css';
+import { FC, MouseEvent, PropsWithChildren } from "react";
+import styles from "../styles/Autok.module.css";
 
 export type AutokProps = PropsWithChildren<{
-    img: string,
-    root: string
-    name: string,
-}>
+  img: string;
+  root: string;
+  name: string;
+}>;
 
-export const Autok: FC<AutokProps> = ({ img, root, name }) => {
+type AutokComponentProps = AutokProps & {
+  onNavigate?: (path: string) => void;
+};
 
-    return <div className={`${styles.container}`} >
-            <a href={root}><img src={img} alt={name} />
-            </a>
-            <h2>{name}</h2>
+export const Autok: FC<AutokComponentProps> = ({
+  img,
+  root,
+  name,
+  onNavigate,
+}) => {
+  const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    if (!onNavigate) {
+      return;
+    }
+    if (
+      event.button !== 0 ||
+      event.defaultPrevented ||
+      event.metaKey ||
+      event.altKey ||
+      event.ctrlKey ||
+      event.shiftKey
+    ) {
+      return;
+    }
+    event.preventDefault();
+    onNavigate(root);
+  };
+
+  return (
+    <div className={styles.container}>
+      <a className={styles.cardLink} href={root} onClick={handleClick}>
+        <img src={img} alt={name} />
+      </a>
+      <h2>{name}</h2>
     </div>
-}
+  );
+};
 
 //PROPS -> {}
 type TitleProps = {
-    title: string
-}
+  title: string;
+  className?: string;
+};
 
-export function Title({ title }: TitleProps) {
-
-    return <h1> 
-        {title} 
-    </h1>
+export function Title({ title, className }: TitleProps) {
+  return <h1 className={className}>{title}</h1>;
 }
 
 type HomeProps = {
-    home: string
-}
+  home: string;
+  className?: string;
+  href?: string;
+  onClick?: (event: MouseEvent<HTMLAnchorElement>) => void;
+};
 
-export function Home({ home }: HomeProps) {
-
-    return <a href='#'>
-        {home} 
+export function Home({ home, className, href = "#", onClick }: HomeProps) {
+  return (
+    <a className={className} href={href} onClick={onClick}>
+      {home}
     </a>
+  );
 }
 
 type ModelProps = {
-    model: string
-}
+  model: string;
+  className?: string;
+  href?: string;
+  onClick?: (event: MouseEvent<HTMLAnchorElement>) => void;
+};
 
-export function Model({ model }: ModelProps) {
-
-    return <a href='#'> 
-        {model} 
+export function Model({ model, className, href = "#", onClick }: ModelProps) {
+  return (
+    <a className={className} href={href} onClick={onClick}>
+      {model}
     </a>
+  );
 }

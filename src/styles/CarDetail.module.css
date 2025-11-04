@@ -1,0 +1,144 @@
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2rem, 3.6vw, 2.75rem);
+  font-weight: 700;
+  color: #333;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  background: #f9f9f9;
+  border-radius: 18px;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
+}
+
+.hero img {
+  width: min(640px, 100%);
+  height: auto;
+}
+
+.lead {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+.features {
+  padding-left: 1.25rem;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+  line-height: 1.6;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #444;
+}
+
+.sectionBody {
+  margin: 0;
+  line-height: 1.65;
+  color: #4e4e4e;
+}
+
+.tableScroll {
+  overflow-x: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableLarge {
+  min-width: 720px;
+}
+
+.tableWrapper {
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.table thead {
+  background: #efefef;
+}
+
+.table th,
+.table td {
+  padding: 0.9rem 1rem;
+  text-align: left;
+  font-size: 0.95rem;
+  color: #3c3c3c;
+  white-space: nowrap;
+}
+
+.tableCompact th,
+.tableCompact td {
+  white-space: normal;
+}
+
+.table tbody tr:nth-of-type(even) {
+  background: #f8f8f8;
+}
+
+.closingNote {
+  margin: 0;
+  font-weight: 500;
+  color: #3a3a3a;
+}
+
+@media (max-width: 768px) {
+  .article {
+    gap: 1.5rem;
+  }
+
+  .tableLarge {
+    min-width: 640px;
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 1.9rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  .features {
+    padding-left: 1rem;
+    list-style-position: inside;
+    line-height: 1.75;
+  }
+
+  .table th,
+  .table td {
+    font-size: 0.9rem;
+    padding: 0.75rem 0.85rem;
+  }
+}
