@@ -121,7 +121,7 @@
 }
 
 .button:hover{
-  background-color: black;
+  background-color:#3c3c3c;
   transition-duration: 0.5s;
   box-shadow: 2px 2px black;
 }
