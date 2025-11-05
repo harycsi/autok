@@ -84,18 +84,3 @@ export function Model({ model, className, href = "#", onClick }: ModelProps) {
     </a>
   );
 }
-
-type FormProps = {
-  form: string;
-  className?: string;
-  href?: string;
-  onClick?: (event: MouseEvent<HTMLAnchorElement>) => void;
-};
-
-export function Form({ form, className, href = "form", onClick }: FormProps) {
-  return (
-    <a className={className} href={href} onClick={onClick}>
-      {form}
-    </a>
-  );
-}

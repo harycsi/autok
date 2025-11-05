@@ -2,6 +2,8 @@ import { FC } from 'react';
 import { CarDetail } from '../data/carDetails';
 import styles from '../styles/CarDetail.module.css';
 
+const HOME_PATH = '/'; 
+
 type CarDetailPageProps = {
   detail: CarDetail;
   onNavigateHome: () => void;
@@ -93,6 +95,7 @@ export const CarDetailPage: FC<CarDetailPageProps> = ({
     </section>
 
     <p className={styles.closingNote}>{detail.closingNote}</p>
+    
     <button className={styles.button}>Megvásárolom</button>
   </article>
 );
