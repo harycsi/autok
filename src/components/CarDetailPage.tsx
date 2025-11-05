@@ -93,6 +93,6 @@ export const CarDetailPage: FC<CarDetailPageProps> = ({
     </section>
 
     <p className={styles.closingNote}>{detail.closingNote}</p>
-    <button className={styles.button}></button>
+    <button className={styles.button}>Megvásárolom</button>
   </article>
 );

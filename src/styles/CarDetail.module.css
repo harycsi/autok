@@ -112,16 +112,17 @@
 }
 
 .button{
-  background: #f8f8f8;
-  color: #4e4e4e;
-  font-size: 24px;
+  background: #444;
+  max-width: fit-content;
+  color: white;
+  font-size: 16px;
   padding: 10px;
-  border: #444;
+  border: black;
   border-radius: 10px;
 }
 
 .button:hover{
-  background-color:#3c3c3c;
+  background-color:#444;
   transition-duration: 0.5s;
   box-shadow: 2px 2px black;
 }
